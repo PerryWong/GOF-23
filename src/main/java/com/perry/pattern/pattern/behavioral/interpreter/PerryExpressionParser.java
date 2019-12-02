@@ -1,0 +1,35 @@
+package com.perry.pattern.pattern.behavioral.interpreter;
+
+import java.util.Stack;
+
+/**
+ *
+ */
+public class PerryExpressionParser {
+    private Stack<Interpreter> stack = new Stack<Interpreter>();
+
+    public int parse(String str) {
+        String[] strItemArray = str.split(" ");
+        for (String symbol : strItemArray) {
+            if (!OperatorUtil.isOperator(symbol)) {
+                // 不是运算符号，为数字
+                Interpreter numberExpression = new NumberInterpreter(symbol);
+                stack.push(numberExpression);
+                System.out.println(String.format("入栈: %d", numberExpression.interpreter()));
+            } else {
+                // 是运算符号，可以计算
+                Interpreter firstExpression = stack.pop();
+                Interpreter secondExpression = stack.pop();
+                System.out.println(String.format("出栈: %d 和 %d", firstExpression.interpreter(), secondExpression.interpreter()));
+                Interpreter operator = OperatorUtil.getExpressionObject(firstExpression, secondExpression, symbol);
+                System.out.println(String.format("应用运算符: %s", operator));
+                int result = operator.interpreter();
+                NumberInterpreter resultInterpreter = new NumberInterpreter(result);
+                stack.push(resultInterpreter);
+                System.out.println(String.format("阶段结果入栈: %d", resultInterpreter.interpreter()));
+            }
+        }
+        int result = stack.pop().interpreter();
+        return result;
+    }
+}
