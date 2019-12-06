@@ -1,7 +1,7 @@
 package com.perry.pattern.pattern.creational.builder;
 
 /**
- * Created by geely
+ * 课程真实建造者
  */
 public class CourseActualBuilder extends CourseBuilder {
 
@@ -18,9 +18,19 @@ public class CourseActualBuilder extends CourseBuilder {
         course.setCoursePPT(coursePPT);
     }
 
+    /**
+     * 此处传入地址为序列图地址
+     * 该方法需要将序列图转化为视频
+     *
+     * @param courseVideoPath 序列图地址
+     */
     @Override
-    public void buildCourseVideo(String courseVideo) {
-        course.setCourseVideo(courseVideo);
+    public void buildCourseVideo(String courseVideoPath) {
+        // 序列图经过处理，生成视频地址(如使用FFmpeg框架进行命令行操作生成)
+        String videoPath = courseVideoPath + ".mp4";
+        // 将生成的地址传入video
+        Video video = new Video(videoPath);
+        course.setCourseVideo(video);
     }
 
     @Override

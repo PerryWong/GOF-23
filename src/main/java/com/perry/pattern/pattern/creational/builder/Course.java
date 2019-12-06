@@ -1,12 +1,12 @@
 package com.perry.pattern.pattern.creational.builder;
 
 /**
- * Created by geely
+ * 课程
  */
 public class Course {
     private String courseName;
     private String coursePPT;
-    private String courseVideo;
+    private Video courseVideo;
     private String courseArticle;
 
     //question & answer
@@ -28,11 +28,11 @@ public class Course {
         this.coursePPT = coursePPT;
     }
 
-    public String getCourseVideo() {
+    public Video getCourseVideo() {
         return courseVideo;
     }
 
-    public void setCourseVideo(String courseVideo) {
+    public void setCourseVideo(Video courseVideo) {
         this.courseVideo = courseVideo;
     }
 
@@ -50,6 +50,14 @@ public class Course {
 
     public void setCourseQA(String courseQA) {
         this.courseQA = courseQA;
+    }
+
+    public void playVideo() {
+        if (courseVideo != null) {
+            System.out.println("video " + courseVideo.getPath() + " 正在播放");
+        } else {
+            System.out.println("video为空 无法播放");
+        }
     }
 
     @Override

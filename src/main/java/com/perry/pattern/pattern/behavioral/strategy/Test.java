@@ -23,6 +23,8 @@ package com.perry.pattern.pattern.behavioral.strategy;
  * 相关设计模式：
  *      1.策略模式（接受创建好的对象从而实现不同的行为）和工厂模式（接收指令创建出符合要求的对象）
  *      2.策略模式（客户端需要知道选择哪个模式）和状态模式（客户端不需要关心具体的状态，状态会自动转换）
+ *
+ * 案例：商品活动促销
  */
 public class Test {
     /*public static void main(String[] args) {

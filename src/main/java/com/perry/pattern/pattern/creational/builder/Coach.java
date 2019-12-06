@@ -1,7 +1,7 @@
 package com.perry.pattern.pattern.creational.builder;
 
 /**
- * Created by geely
+ * 建造者指导
  */
 public class Coach {
     private CourseBuilder courseBuilder;
@@ -11,11 +11,12 @@ public class Coach {
     }
 
     public Course makeCourse(String courseName,String coursePPT,
-                             String courseVideo,String courseArticle,
+                             String courseVideoPath,String courseArticle,
                              String courseQA){
+        // 此处假设对builder.build方法有顺序要求
         this.courseBuilder.buildCourseName(courseName);
         this.courseBuilder.buildCoursePPT(coursePPT);
-        this.courseBuilder.buildCourseVideo(courseVideo);
+        this.courseBuilder.buildCourseVideo(courseVideoPath);
         this.courseBuilder.buildCourseArticle(courseArticle);
         this.courseBuilder.buildCourseQA(courseQA);
         return this.courseBuilder.makeCourse();

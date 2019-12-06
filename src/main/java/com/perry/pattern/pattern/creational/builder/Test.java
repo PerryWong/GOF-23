@@ -10,7 +10,7 @@ package com.perry.pattern.pattern.creational.builder;
  *
  * 适用场景：
  *      1.如果一个对象有非常复杂的内部结构（很多属性）
- *      2.想把复杂对象的创建和使用分离
+ *      2.想把复杂对象的创建和使用分离（对象的创建比较复杂）
  *
  * 优点：
  *      1.封装性好，创建和使用分离
@@ -19,6 +19,8 @@ package com.perry.pattern.pattern.creational.builder;
  * 缺点：
  *      1.产生多余的builder对象
  *      2.产品内部发生变化，建造者都要修改，成本较大
+ *
+ * 案例：创建课程及属性赋值
  *
  * jdk案例：StringBuilder线程不安全，StringBuffer线程安全，ImmutableSet,CacheBuilder,SqlSessionFactory
  */

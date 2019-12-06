@@ -1,7 +1,7 @@
 package com.perry.pattern.pattern.creational.builder.v2;
 
 /**
- * Created by geely
+ * 升级版课程
  */
 public class Course {
 

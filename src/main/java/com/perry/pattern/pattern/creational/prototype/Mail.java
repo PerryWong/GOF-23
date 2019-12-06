@@ -1,7 +1,7 @@
 package com.perry.pattern.pattern.creational.prototype;
 
 /**
- * Created by geely
+ * 邮件
  */
 public class Mail implements Cloneable{
     private String name;
