@@ -1,13 +1,14 @@
 package com.perry.pattern.pattern.creational.singleton;
 
 /**
+ * 《 Effective java 》推荐
  * 枚举类天然可序列化，受到其他类保护不会被多次序列化
  * 所以可以自然防御序列化反序列化及反射攻击
  */
 public enum EnumInstance {
     INSTANCE {
         protected void printTest() {
-            System.out.println("Geely Print Test");
+            System.out.println("Print Test");
         }
     };
 

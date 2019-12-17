@@ -16,6 +16,7 @@ public class ContainerSingleton {
 
     }
 
+    // HashMap 线程不安全
     private static Map<String, Object> singletonMap = new HashMap<String, Object>();
 
     public static void putInstance(String key, Object instance) {

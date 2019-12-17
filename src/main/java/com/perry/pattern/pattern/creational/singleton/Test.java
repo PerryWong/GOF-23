@@ -57,11 +57,11 @@ public class Test {
         /**
          * 测试单例模式线程安全
          */
-        /*Thread t1 = new Thread(new T());
+        Thread t1 = new Thread(new T());
         Thread t2 = new Thread(new T());
         t1.start();
         t2.start();
-        System.out.println("program end");*/
+        System.out.println("program end");
 
         /**
          * 序列化与反序列化，反射攻击破坏单例模式
@@ -107,7 +107,7 @@ public class Test {
 //        LazySingleton newInstance = (LazySingleton) constructor.newInstance();
 //        LazySingleton instance = LazySingleton.getInstance();
 
-//        EnumInstance instance = (EnumInstance) constructor.newInstance("Geely",666);
+//        EnumInstance instance = (EnumInstance) constructor.newInstance("test",666);
 
 //        System.out.println(instance);
 //        System.out.println(newInstance);

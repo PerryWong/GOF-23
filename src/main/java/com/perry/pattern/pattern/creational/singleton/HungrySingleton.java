@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * 饿汉式
- * 线程不安全
+ * 提前消耗内存
+ * 线程安全，类加载时已初始化好单例
  */
 public class HungrySingleton implements Serializable,Cloneable{
 

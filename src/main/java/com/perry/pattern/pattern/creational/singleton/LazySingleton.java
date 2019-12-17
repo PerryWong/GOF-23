@@ -8,6 +8,7 @@ package com.perry.pattern.pattern.creational.singleton;
 public class LazySingleton {
     private static LazySingleton lazySingleton = null;
 
+    // 若先使用反射攻击后正常调用getInstance()方法，也可以获取到两个不同的实例
     private LazySingleton() {
         if (lazySingleton != null) {
             throw new RuntimeException("单例构造器禁止反射调用");
@@ -29,6 +30,8 @@ public class LazySingleton {
      * 静态方法中synchronized锁的是类的class文件
      * 而非静态方法中synchronized锁的是堆内存中生成的对象
      *
+     * 无论instance对象是否初始化完成，获取instance时都会获得线程锁，耗费性能
+     * 由此引出DoubleCheck
      * @return
      */
     public synchronized static LazySingleton getInstance() {
