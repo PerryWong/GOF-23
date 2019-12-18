@@ -19,6 +19,7 @@ public class Test {
         System.out.println(pig1);
         System.out.println(pig2);
 
+        // 克隆破坏单例
 //        HungrySingleton hungrySingleton = HungrySingleton.getInstance();
 //        Method method = hungrySingleton.getClass().getDeclaredMethod("clone");
 //        method.setAccessible(true);
